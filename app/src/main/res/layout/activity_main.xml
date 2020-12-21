@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    android:paddingHorizontal="20dp"
+    tools:context=".MainActivity">
+
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Hey There!"
+        android:textColor="@color/white"
+        android:textSize="40sp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="25dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="@+id/linearLayout">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvNT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="NT"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3"/>
+
+            <TextView
+                android:id="@+id/tvSSD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="SSD"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3" />
+
+            <TextView
+                android:id="@+id/tvLCD"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="LCD"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3"/>
+
+            <TextView
+                android:id="@+id/tvPDCA"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="PDCA"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3"/>
+
+            <TextView
+                android:id="@+id/tvDE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="DE"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3"/>
+
+            <TextView
+                android:id="@+id/tvML"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="ML"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3"/>
+
+            <TextView
+                android:id="@+id/tvSE"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="18dp"
+                android:background="@drawable/circle"
+                android:gravity="center"
+                android:text="SE"
+                android:fontFamily="@font/roboto_medium"
+                android:textAlignment="center"
+                android:textColor="#4239C3"/>
+
+        </LinearLayout>
+
+    </HorizontalScrollView>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="600dp"
+        android:background="@drawable/background_stack"
+        android:divider="@drawable/divider_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="10dp"
+        android:paddingTop="50dp"
+        android:paddingBottom="50dp"
+        android:showDividers="middle"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@drawable/divider_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/btnMonday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:background="@drawable/weekdays_button"
+                android:text="Monday"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnTuesday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:background="@drawable/weekdays_button"
+                android:text="Tuesday"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@drawable/divider_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/btnWednesday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:background="@drawable/weekdays_button"
+                android:text="Wednesday"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnThursday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:background="@drawable/weekdays_button"
+                android:text="Thursday"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:divider="@drawable/divider_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="20dp"
+            android:showDividers="middle">
+
+            <Button
+                android:id="@+id/btnFriday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:background="@drawable/weekdays_button"
+                android:text="Friday"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btnSaturday"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="10"
+                android:textSize="15dp"
+                android:fontFamily="@font/roboto_medium"
+                android:background="@drawable/weekdays_button"
+                android:text="Saturday"
+                android:textColor="@color/black" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

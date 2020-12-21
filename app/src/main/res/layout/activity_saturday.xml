@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".SaturdayActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:divider="@drawable/divider_horizontal"
+        android:showDividers="middle"
+        tools:layout_editor_absoluteX="16dp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider_vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView67"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#F7D78C"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="08:30 AM\n-\n09:15 AM"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/tvPDCA"
+                android:layout_weight="5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#F7D78C"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="PDCA \n Join Meeting"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider_vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#A6D3F2"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="09:45 AM\n-\n10:30 AM"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#A6D3F2"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="DE \n Join Meeting"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider_vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#F7D78C"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="10:45 AM\n-\n11:30 AM"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#F7D78C"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="SSD \n Join Meeting"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider_vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#A6D3F2"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="11:45 AM\n-\n12:30 PM"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#A6D3F2"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="LCD \n Join Meeting"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:divider="@drawable/divider_vertical"
+            android:showDividers="middle">
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#F7D78C"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="12:45 PM\n-\n01:30 PM"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+            <TextView
+                android:layout_weight="3"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:background="@drawable/weekdays_button"
+                android:backgroundTint="#F7D78C"
+                android:fontFamily="@font/roboto_medium"
+                android:padding="16dp"
+                android:text="NT \n Join Meeting"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="18sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
