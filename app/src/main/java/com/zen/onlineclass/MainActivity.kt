@@ -3,17 +3,17 @@ package com.zen.onlineclass
 import android.content.Intent
 import android.icu.util.Calendar
 import android.net.Uri
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.work.Data
+import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
 import com.zen.onlineclass.Notify.Companion.NOTIFICATION_ID
 import com.zen.onlineclass.Notify.Companion.NOTIFICATION_WORK
 import kotlinx.android.synthetic.main.activity_main.*
 import java.lang.System.currentTimeMillis
-import java.nio.charset.CodingErrorAction.REPLACE
 import java.util.concurrent.TimeUnit
 
 class MainActivity : AppCompatActivity() {
@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
             Intent(this, WednesdayActivity::class.java).also {
                 startActivity(it)
             }
-         }
+        }
 
         btnThursday.setOnClickListener {
             Intent(this, ThursdayActivity::class.java).also {
@@ -99,7 +99,7 @@ class MainActivity : AppCompatActivity() {
 
         val networkTheoryNotifyTime = networkTheoryTimings.timeInMillis
 
-        if(networkTheoryNotifyTime > currentTime) {
+        if (networkTheoryNotifyTime > currentTime) {
 
             val data = Data.Builder().putInt(NOTIFICATION_ID, 0).build()
             val delay = networkTheoryNotifyTime - currentTime
@@ -117,16 +117,15 @@ class MainActivity : AppCompatActivity() {
                 .setInitialDelay(delay, TimeUnit.MILLISECONDS).setInputData(data).build()
 
         val instanceWorkManager = WorkManager.getInstance(this)
-        instanceWorkManager.beginUniqueWork(NOTIFICATION_WORK, REPLACE, notificationWork).enqeue()
+        instanceWorkManager.beginUniqueWork(NOTIFICATION_WORK, ExistingWorkPolicy.REPLACE, notificationWork).enqueue()
 
     }
 
-     private fun goToUrl(url : String) {
+    private fun goToUrl(url: String) {
 
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(url)
         startActivity(i)
-     }
-    
+    }
 }
 
