@@ -22,7 +22,6 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-
         btnMonday.setOnClickListener {
             Intent(this, MondayActivity::class.java).also {
                 startActivity(it)
@@ -87,29 +86,27 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "No Permanent Link Assigned", Toast.LENGTH_SHORT).show()
         }
 
-        val currentTime = currentTimeMillis()
-
         val networkTheoryTimings = Calendar.getInstance()
 
-        networkTheoryTimings.set(Calendar.SECOND, 0)
-        networkTheoryTimings.set(Calendar.MINUTE, 30)
-        networkTheoryTimings.set(Calendar.HOUR, 12)
-        networkTheoryTimings.set(Calendar.AM_PM, Calendar.PM)
-        networkTheoryTimings.set(Calendar.DAY_OF_WEEK, Calendar.THURSDAY)
-
-        val networkTheoryNotifyTime = networkTheoryTimings.timeInMillis
-
-        if (networkTheoryNotifyTime > currentTime) {
-
-            val data = Data.Builder().putInt(NOTIFICATION_ID, 0).build()
-            val delay = networkTheoryNotifyTime - currentTime
-
-            scheduleNotification(delay, data)
-
+        networkTheoryTimings.apply {
+            set(2020, 11, 23, 15, 36, 0)
+            /*set(Calendar.SECOND, 0)
+            set(Calendar.MINUTE, 10)
+            set(Calendar.HOUR, 3)
+            set(Calendar.AM_PM, Calendar.PM)
+            set(Calendar.YEAR, 2020)
+            set(Calendar.MONTH, 12)
+            set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY)*/
         }
 
+        val networkTheoryNotifyTime = networkTheoryTimings.timeInMillis
+        val currentTime = currentTimeMillis()
+        if (networkTheoryNotifyTime > currentTime) {
+            val data = Data.Builder().putInt(NOTIFICATION_ID, 0).build()
+            val delay = networkTheoryNotifyTime - currentTime
+            scheduleNotification(delay, data)
+        }
     }
-
 
     private fun scheduleNotification(delay: Long, data: Data) {
 
@@ -122,7 +119,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun goToUrl(url: String) {
-
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(url)
         startActivity(i)
