@@ -22,7 +22,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        btnTextbooks.setOnClickListener {
+            Intent(this, TextbookActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
+        //Joins the meeting when clicked
         btnMonday.setOnClickListener {
             Intent(this, MondayActivity::class.java).also {
                 startActivity(it)
@@ -87,26 +93,40 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this, "No Permanent Link Assigned", Toast.LENGTH_SHORT).show()
         }
 
-        val currentTime = currentTimeMillis()
 
+        //Notification Timings
         val networkTheoryTimings = Calendar.getInstance()
 
-        networkTheoryTimings.set(2020,12,22,5,6)
-        networkTheoryTimings.set(Calendar.AM_PM, Calendar.PM)
+        networkTheoryTimings.apply {
+            set(2020, 11, 24, 20, 59, 0)
+
+            /*set(Calendar.DAY_OF_WEEK, 2 )
+            set(Calendar.SECOND, 0)
+            set(Calendar.MINUTE, 6)
+            set(Calendar.HOUR, 19)
+            set(Calendar.YEAR, 2020)
+            set(Calendar.MONTH, 11)*/
+
+
+            /*set(Calendar.SECOND, 0)
+            set(Calendar.MINUTE, 10)
+            set(Calendar.HOUR, 3)
+            set(Calendar.AM_PM, Calendar.PM)
+            set(Calendar.YEAR, 2020)
+            set(Calendar.MONTH, 12)
+            set(Calendar.DAY_OF_WEEK, Calendar.WEDNESDAY)*/
+        }
 
         val networkTheoryNotifyTime = networkTheoryTimings.timeInMillis
-
+        val currentTime = currentTimeMillis()
         if (networkTheoryNotifyTime > currentTime) {
-
             val data = Data.Builder().putInt(NOTIFICATION_ID, 0).build()
             val delay = networkTheoryNotifyTime - currentTime
-
             scheduleNotification(delay, data)
-
         }
     }
 
-
+    //Schedule Notifications
     private fun scheduleNotification(delay: Long, data: Data) {
 
         val notificationWork = OneTimeWorkRequest.Builder(Notify::class.java)
@@ -117,8 +137,8 @@ class MainActivity : AppCompatActivity() {
 
     }
 
+    //Goes to the URL
     private fun goToUrl(url: String) {
-
         val i = Intent(Intent.ACTION_VIEW)
         i.data = Uri.parse(url)
         startActivity(i)

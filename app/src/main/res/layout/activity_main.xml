@@ -14,12 +14,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/roboto_bold"
-        android:text="Hey There!"
+        android:text="Hey There, "
         android:textColor="@color/white"
-        android:textSize="40sp"
+        android:textSize="30sp"
         android:layout_marginBottom="18dp"
         app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
         app:layout_constraintStart_toStartOf="@+id/linearLayout" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_light"
+        android:text="Good Morning"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:layout_marginBottom="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/horizontalScrollView"
+        app:layout_constraintStart_toEndOf="@+id/textView6" />
+
 
     <HorizontalScrollView
         android:id="@+id/horizontalScrollView"
@@ -235,10 +247,22 @@
                 android:text="Saturday"
                 android:textColor="@color/black" />
 
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/btnTextbooks"
+            android:layout_marginHorizontal="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/weekdays_button"
+            android:text="Textbooks"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/textView6" />
 
 
     </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

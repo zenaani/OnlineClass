@@ -1,7 +1,9 @@
 package com.zen.onlineclass
 
+import android.annotation.SuppressLint
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.app.PendingIntent.FLAG_UPDATE_CURRENT
 import android.app.TaskStackBuilder
 import android.content.Context
@@ -14,6 +16,7 @@ import android.media.AudioAttributes.USAGE_NOTIFICATION_RINGTONE
 import android.media.RingtoneManager.TYPE_NOTIFICATION
 import android.media.RingtoneManager.getDefaultUri
 import android.os.Build
+import android.os.Build.VERSION.*
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationCompat.DEFAULT_ALL
 import androidx.work.ListenableWorker.Result.success
@@ -28,6 +31,7 @@ class Notify(val context: Context, workerParams: WorkerParameters) : Worker(cont
         return success()
     }
 
+    @SuppressLint("ObsoleteSdkInt")
     private fun sendNotifications(id: Int) {
 
         val intent = Intent(applicationContext, MainActivity::class.java)
@@ -36,21 +40,19 @@ class Notify(val context: Context, workerParams: WorkerParameters) : Worker(cont
 
         val notificationManager = applicationContext.getSystemService(NOTIFICATION_SERVICE) as NotificationManager
 
-
-        val pendingIntent = TaskStackBuilder.create(context).run {
-            addNextIntentWithParentStack(intent)
-            getPendingIntent(0, FLAG_UPDATE_CURRENT)
-        }
+        val pendingIntent = PendingIntent.getActivity(applicationContext, 0, intent, 0)
 
         val notification = NotificationCompat.Builder(applicationContext, NOTIFICATION_CHANNEL)
+                .setSmallIcon(R.drawable.ic_launcher_background)
                 .setContentTitle("Join Network Theory")
                 .setContentTitle("Time's up")
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults(DEFAULT_ALL)
                 .setContentIntent(pendingIntent)
                 .setAutoCancel(true)
+        notification.priority = NotificationCompat.PRIORITY_MAX
 
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+        if (SDK_INT >= Build.VERSION_CODES.O) {
             notification.setChannelId(NOTIFICATION_CHANNEL)
 
             val ringtoneManager = getDefaultUri(TYPE_NOTIFICATION)
@@ -59,18 +61,18 @@ class Notify(val context: Context, workerParams: WorkerParameters) : Worker(cont
                     .setContentType(AudioAttributes.CONTENT_TYPE_SONIFICATION)
                     .build()
 
-            NotificationChannel(NOTIFICATION_CHANNEL, NOTIFICATION_NAME, NotificationManager.IMPORTANCE_HIGH).apply {
+            val channel = NotificationChannel(NOTIFICATION_CHANNEL, NOTIFICATION_NAME, NotificationManager.IMPORTANCE_HIGH).apply {
                 enableLights(true)
                 lightColor = R.color.design_default_color_on_primary
                 enableVibration(true)
                 vibrationPattern = longArrayOf(100, 200, 300, 400, 500, 400, 300, 200, 400)
                 setSound(ringtoneManager, audioAttributes)
-                notificationManager.createNotificationChannel(this)
             }
 
-            notificationManager.notify(id, notification.build())
-
+            notificationManager.createNotificationChannel(channel)
         }
+
+        notificationManager.notify(id, notification.build())
     }
 
     companion object {
