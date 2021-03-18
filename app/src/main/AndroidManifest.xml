@@ -9,14 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.OnlineClass">
-        <activity android:name=".TextbookActivity"></activity>
-        <activity android:name=".SaturdayAcitivity" />
+        <activity android:name=".ClassroomActivity" />
+        <activity android:name=".TextbookActivity" />
+        <activity android:name=".SaturdayActivity" />
         <activity android:name=".FridayActivity" />
         <activity android:name=".ThursdayActivity" />
         <activity android:name=".WednesdayActivity" />
         <activity android:name=".TuesdayActivity" />
         <activity android:name=".MondayActivity" />
-        <activity android:name=".SaturdayActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

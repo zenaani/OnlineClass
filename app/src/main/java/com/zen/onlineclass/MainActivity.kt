@@ -4,6 +4,7 @@ import android.content.Intent
 import android.icu.util.Calendar
 import android.net.Uri
 import android.os.Bundle
+import android.renderscript.ScriptGroup
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.work.Data
@@ -21,6 +22,12 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        btnGClassroom.setOnClickListener {
+            Intent(this, ClassroomActivity::class.java).also {
+                startActivity(it)
+            }
+        }
 
         btnTextbooks.setOnClickListener {
             Intent(this, TextbookActivity::class.java).also {
