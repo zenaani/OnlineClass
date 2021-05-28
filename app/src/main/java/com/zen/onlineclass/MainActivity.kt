@@ -62,7 +62,7 @@ class MainActivity : AppCompatActivity() {
 
         btnFriday.setOnClickListener {
             Intent(this, FridayActivity::class.java).also {
-                startActivity(it)
+                startActivity(this)
             }
         }
 
